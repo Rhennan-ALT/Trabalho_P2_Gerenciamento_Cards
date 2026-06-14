@@ -13,7 +13,7 @@ def get_db():
     finally:
         db.close()
 
-@app.post("/cartas", response_model=schemas.CartaPoke)
+@app.post("/cartas", response_model=schemas.CartaPoke, status_code=201)
 def criar_card(
     card: schemas.CartaPCreate, 
     db: Session = Depends(get_db)
