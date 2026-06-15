@@ -10,29 +10,29 @@ Uma aplicação REST desenvolvida em FastAPI para o gerenciamento completo de ca
 
 ---
 
-## Estrutura do Projeto
+# Estrutura do Projeto
 
 pokemon-api/
 │
 ├── app/
-│   ├── __init__.py
-│   ├── main.py         
-│   ├── database.py      
-│   ├── models.py        
-│   ├── schemas.py      
-│   └── crud.py         
+│   ├── __init__.py      # Inicializador do pacote Python do app
+│   ├── main.py          # Ponto de entrada da API e definição das rotas
+│   ├── database.py      # Configuração do SQLAlchemy e conexão com o banco
+│   ├── models.py        # Modelos de tabela do banco de dados (SQLAlchemy)
+│   ├── schemas.py       # Validação de dados e serialização (Pydantic)
+│   └── crud.py          # Operações de persistência de dados (Create, Read, Update, Delete)
 │
 ├── tests/
-│   ├── conftest.py     
-│   └── test_cartas.py   
+│   ├── conftest.py      # Fixtures do Pytest e banco de testes isolado
+│   └── test_cartas.py   # Testes automatizados das rotas CRUD
 │
-├── Dockerfile           
-├── docker-compose.yml  
-├── requirements.txt
-├── pytest.ini     
-├── .env                
-├── README.md
-└── .gitignore
+├── Dockerfile           # Instalações e ambiente da imagem do app
+├── docker-compose.yml   # Orquestração do app e dos bancos Postgres
+├── requirements.txt     # Dependências do projeto (FastAPI, SQLAlchemy, etc.)
+├── pytest.ini          # Arquivo de configuração do Pytest
+├── .env                 # Variáveis de ambiente com dados sensíveis
+├── README.md            # Documentação do projeto
+└── .gitignore           # Arquivos e pastas ignorados pelo Git
 
 ---
 
@@ -52,11 +52,12 @@ pokemon-api/
 ## 1.Clonar Repositório
 
 git clone git@github.com:Rhennan-ALT/Trabalho_P2_Gerenciamento_Cards.git
+
 cd Trabalho_P2_BackEnd
 
 ## 2.Configurar Variáveis de Ambiente
 
-Crie um arquivo .env na raiz do projeto com as credenciais de acesso ao banco
+Crie um arquivo .env na raiz do projeto com as credenciais de acesso ao banco:
 
 DATABASE_URL=postgresql://admin:admin@db:5432/pokemon_db
 
