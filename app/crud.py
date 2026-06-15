@@ -5,7 +5,7 @@ from .schemas import CartaPCreate
 def criar_carta_poke(db: Session, card: CartaPCreate):
     db_card = Carta(**card.model_dump())
     db.add(db_card)
-    db.commit
+    db.commit()
     db.refresh(db_card)
     return db_card
 

@@ -30,5 +30,4 @@ def client():
 
     with TestClient(app) as client:
         yield client
-
     Base.metadata.drop_all(bind=engine)

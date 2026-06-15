@@ -15,7 +15,7 @@ def test_criar_cartap(client):
     assert data["id"] > 0
     assert data["nome"] == "Gengar"
     assert data["tipo"] == "Fantasma"
-    assert data["hp"] == "120"
+    assert data["hp"] == 120
     assert data["rar"] == "Holográfica"
     assert data["desc"] == "Pokémon Favorito hehe"
 
@@ -117,15 +117,15 @@ def test_delete_cartap(client):
     response = client.delete(f"/cartas/{card_id}")
     assert response.status_code == 200
     data = response.json()
-    assert data["message"] == "Essa Carta foi removida"
+    assert data["message"] == "Essa Carta foi Deletada..."
     response = client.get(f"/cartas/{card_id}")
 
     assert response.status_code == 404
-    assert response.json()["detail"] == "Essa Carta não foi Encontrada"
+    assert response.json()["detail"] == "Essa Carta não foi Encontrada..."
 
 #teste de erro
 def test_erro_cartap(client):
     response = client.get("/cartas/999")
     assert response.status_code == 404
     data = response.json()
-    assert data["detail"] == "Essa Carta não foi Encontrada"
+    assert data["detail"] == "Essa Carta não foi Encontrada..."
