@@ -11,7 +11,7 @@ Uma aplicação REST desenvolvida em FastAPI para o gerenciamento completo de ca
 ---
 
 # Estrutura do Projeto
-
+```text
 pokemon-api/
 │
 ├── app/
@@ -33,39 +33,45 @@ pokemon-api/
 ├── .env                 # Variáveis de ambiente com dados sensíveis
 ├── README.md            # Documentação do projeto
 └── .gitignore           # Arquivos e pastas ignorados pelo Git
+```
 
 ---
 
 # Tecnologias e Ferramentas
-
+```bash
 - Python 3.12
 - FastAPI (Framework web de alta performance)
 - SQLAlchemy (ORM para mapeamento do banco)
 - PostgreSQL 16 (Banco de dados relacional)
 - Docker & Docker Compose (Conteinerização)
 - Pytest (Framework de testes automatizados)
+```
 
 ---
 
 # Configuração e Instalação 
 
 ## 1.Clonar Repositório
-
+```bash
 git clone git@github.com:Rhennan-ALT/Trabalho_P2_Gerenciamento_Cards.git
-
+```
+```bash
 cd Trabalho_P2_BackEnd
+```
 
 ## 2.Configurar Variáveis de Ambiente
 
 Crie um arquivo .env na raiz do projeto com as credenciais de acesso ao banco:
-
+```bash
 DATABASE_URL=postgresql://admin:admin@db:5432/pokemon_db
+```
 
 ## 3.Executar com Docker Compose
 
 Suba toda a aplicação junto com o banco de dados, execute:
-
+```bash
 docker-compose up --build
+```
 
 ---
 
@@ -74,10 +80,14 @@ docker-compose up --build
 Os testes automatizados utilizam Pytest e validam todas as operações CRUD da API.
 
 ## Executar todos os testes
+```bash
 pytest -v
+```
 
 ## Executar testes com cobertura
+```bash
 pytest --cov=app
+```
 
 ---
 
